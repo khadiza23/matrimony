@@ -1,0 +1,27 @@
+.shape {
+  width: 500px;
+
+  margin: 60px auto;
+  padding: 20px 10px;
+
+  box-shadow: 1px 2px 3px 4px #a19b9b66;
+  border-radius: 0 10px;
+}
+
+.shape td {
+  width: 250px;
+  height: 40px;
+  padding: 0 10px;
+  color: #0c0c0c;
+  font-size: 16px;
+
+  font-style: bold;
+  text-align: left;
+}
+th {
+  text-align: left;
+}
+
+.shape span {
+  font-size: 15px;
+}

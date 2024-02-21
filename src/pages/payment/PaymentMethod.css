@@ -1,0 +1,32 @@
+.form__radios {
+  display: grid;
+  gap: 25px;
+}
+
+.form__radio {
+  align-items: center;
+  background-color: #fefdfe;
+  border-radius: 1em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+  display: flex;
+  padding: 0.5em;
+}
+
+.form__radio label {
+  align-items: center;
+  display: flex;
+  flex: 1.5;
+  gap: 1em;
+}
+
+.iphone {
+  block-size: 600px;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+  inline-size: 375px;
+  overflow: auto;
+
+  display: grid;
+}
+.form-group {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,17 @@
+.title {
+  text-align: center;
+  font-family: Edwardian Script ITC;
+  font-size: 48px;
+  font: Algerian;
+  color: #ed8e30;
+  font-weight: bold;
+}
+.subtitle {
+  text-align: center;
+  font-size: 12px;
+  color: #c0bebd;
+}
+.card:hover {
+  transform: translateY(-1%);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
