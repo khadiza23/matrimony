@@ -1,6 +1,16 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div id="navbar" className="bg-[#7D0A0A] text-white">
       <div className="navbar max-w-5xl mx-auto">
@@ -38,10 +48,24 @@ const Navbar = () => {
               <li>
                 <Link to="/create-boidata">Create Biodata</Link>
               </li>
+              {user ? (
+                <>
+                  <li>
+                    <Link to="/">Logout</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Dashboard</Link>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              )}
             </ul>
           </div>
           <a className="text-xl">
-            <Link to="/">LifeMateConnect</Link>
+            <Link to="/">LifeMateConnect.com</Link>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -58,9 +82,27 @@ const Navbar = () => {
             <li>
               <Link to="/create-biodata">Create Biodata</Link>
             </li>
+            {user ? (
+              <>
+                <li>
+                  <button onClick={handleLogout}>
+                    <Link to="/">Logout</Link>
+                  </button>
+                </li>
+                <li>
+                  <Link to="/">Dashboard</Link>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
-        <div className="navbar-end">Profile</div>
+        <div className="navbar-end">
+          <Link to="/">Profile</Link>
+        </div>
       </div>
     </div>
   );

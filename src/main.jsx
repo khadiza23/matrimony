@@ -13,6 +13,7 @@ import CreateBiodata from "./Components/CreateBiodata";
 import PaymentMethod from "./pages/payment/PaymentMethod";
 import ConfirmPayment from "./pages/payment/ConfirmPayment";
 import FullBioData from "./pages/FullBiodata/FullBioData";
+import AuthProvider from "./providers/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -57,8 +58,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <div className="mx-auto">
-      <RouterProvider router={router} />
-    </div>
+    <AuthProvider>
+      <div className="mx-auto">
+        <RouterProvider router={router} />
+      </div>
+    </AuthProvider>
   </React.StrictMode>
 );
